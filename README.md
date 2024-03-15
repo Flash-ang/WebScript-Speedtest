@@ -11,8 +11,11 @@ http://localhost/LoadTest/Php01.php
 
 /Apache/bin/
 ab -n 10000 -c 10000 http://localhost:8080/
+
 ab -n 10000 -c 10000 http://localhost/LoadTest/php/Php01.php
+
 ab -n 10000 -c 10000 http://localhost/LoadTest/php/Php02.php
+
 ab -n 10000 -c 10000 http://localhost/LoadTest/php/Php03.php
 
 ** run 3 test and select fastest.
@@ -20,4 +23,5 @@ ab -n 10000 -c 10000 http://localhost/LoadTest/php/Php03.php
 1. no database connection.
 2. Load static html file and reply.
 3. connect to db and do a simple query, response result.
+
     node.js : Error: ER_CON_COUNT_ERROR: Too many connections
