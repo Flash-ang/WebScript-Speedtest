@@ -1,5 +1,6 @@
-# NodeJs-Speedtest
-NodeJs and PHP Speedtest
+# WebScript-Speedtest
+Apache, Nginx (OpenResty), IIS, 
+PHP, Lua, NodeJs, Speedtest
 
 Performance test : 
 
