@@ -23,8 +23,6 @@ ab -n 10000 -c 10000 http://localhost:8080/
 
 Test 1. fixed html / show random number.
 
-Test 2. Load static html file and display.
-
-Test 3. connect to db and do a simple query, response result.
+Test 2. connect to db and do a simple query, response result.
 
     node.js : Error: ER_CON_COUNT_ERROR: Too many connections
