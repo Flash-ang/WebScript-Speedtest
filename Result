@@ -17,9 +17,15 @@ Requests per second: (Bigger is Faster)
 | nginx php fastcgi                      | 2,149.00 |   801.92 | 1,663.89 |   424.05 |   427.17 |
 |
 | node random.js                         | 1,428.57 | 3,215.43 | 6,891.80 | 1,908.40 | 1,187.65 |
+|
+| apache cgi php.exe                     |    17.21 |    16.54 |   111.36 |    77.52 |    CRASH | ** too slow
+| apache cgi lua.exe                     |    20.36 |    19.82 |   321.36 |   198.16 |    99.90 | ** too slow
 
-note : iis seem fastest, follow by nginx lua for large amount of connections.
-
+note : nginx lua is very fast.
+note : iis and nginx lua perform better on large amount of connections.
+note : fast cgi is MUCH faster than cgi.
+note : module (mod_lua, mod_php, nginx lua) is faster than fast cgi.
+note : php run faster on iis.
 
 
 #2 Connect to mysql
@@ -42,4 +48,4 @@ note : iis seem fastest, follow by nginx lua for large amount of connections.
 note : iis seem fastest, follow by apache for large amount of connections.
 
 *1 : does not fetch null value
-*2 : node mysql.js	 TOO MANY connection if not close.
+*2 : node mysql.js	 TOO MANY connection error if not close.
