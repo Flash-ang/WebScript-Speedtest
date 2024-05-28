@@ -14,3 +14,31 @@ Requests per second: (Bigger is Faster)
 | nginx lua file                         | 3,333.33 | 4,629.63 | 9,708.74 | 8,264.46 | 3,558.72 |
 | nginx lua_content random               | 3,333.33 | 4,672.90 | 9,345.79 | 8,000.00 | 4,366.81 |
 | nginx php fastcgi                      | 2,149.00 |   801.92 | 1,663.89 |   424.05 |   427.17 |
+|
+| node random.js                         | 1,428.57 | 3,215.43 | 6,891.80 | 1,908.40 | 1,187.65 |
+
+note : iis seem fastest, follow by nginx lua for large amount of connections.
+
+
+
+#2 Connect to mysql
+|                                        | -n 100   | -n 10000 | -n 10000 | -n 10000 | -n 10000 |
+| Description                            | -c 1     | -c 1     | -c 100   | -c 1000  | -c 10000 |
+| :------------------------------------- | --------:| --------:| --------:| --------:| --------:|
+| iis php                                |   181.82 |   191.68 | 1,081.08 |   922.51 | 4,332.76 |
+|
+| apache mod_lua (mod_dbd) *1            |   333.33 |   381.53 |   987.56 |   825.56 | 1,047.56 |
+| apache mod_proxy_fcgi 127.0.0.1:9000   |   181.82 |   183.92 | 1,302.76 | 1,425.72 | 1,052.41 |
+| apache module php7apache2_4.dll        |   181.82 |   220.12 | 1,670.56 | 1,441.34 |   902.69 |
+|
+| nginx lua file	                       |   333.33 |   255.10 | 2,392.34 |   436.87 |   410.68 |
+| nginx php fastcgi                      |    91.74 |    99.30 | 1,182.03 |   514.35 |   461.68 |
+|
+| node mysql.js (pool) *2                |   500.00 |   783.09 | 1,061.57 |   717.62 |   580.05 | slow start
+| node mysql.js (open & close) *2        |   526.32 |   883.70 | 1,106.19 |   608.20 |   564.02 | slow start
+|
+
+note : iis seem fastest, follow by apache for large amount of connections.
+
+*1 : does not fetch null value
+*2 : node mysql.js	 TOO MANY connection if not close.
