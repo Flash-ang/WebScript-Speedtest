@@ -32,7 +32,7 @@ note : iis seem fastest, follow by nginx lua for large amount of connections.
 | apache mod_proxy_fcgi 127.0.0.1:9000   |   181.82 |   183.92 | 1,302.76 | 1,425.72 | 1,052.41 |
 | apache module php7apache2_4.dll        |   181.82 |   220.12 | 1,670.56 | 1,441.34 |   902.69 |
 |
-| nginx lua file	                       |   333.33 |   255.10 | 2,392.34 |   436.87 |   410.68 |
+| nginx lua file                         |   333.33 |   255.10 | 2,392.34 |   436.87 |   410.68 |
 | nginx php fastcgi                      |    91.74 |    99.30 | 1,182.03 |   514.35 |   461.68 |
 |
 | node mysql.js (pool) *2                |   500.00 |   783.09 | 1,061.57 |   717.62 |   580.05 | slow start
